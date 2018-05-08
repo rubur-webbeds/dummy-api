@@ -1,0 +1,11 @@
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\bin\Debug\netcoreapp2.0\dummyAPI.deps.json
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\bin\Debug\netcoreapp2.0\dummyAPI.runtimeconfig.json
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\bin\Debug\netcoreapp2.0\dummyAPI.runtimeconfig.dev.json
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\bin\Debug\netcoreapp2.0\dummyAPI.dll
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\bin\Debug\netcoreapp2.0\dummyAPI.pdb
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\obj\Debug\netcoreapp2.0\dummyAPI.csprojResolveAssemblyReference.cache
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\obj\Debug\netcoreapp2.0\dummyAPI.csproj.CoreCompileInputs.cache
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\obj\Debug\netcoreapp2.0\dummyAPI.AssemblyInfoInputs.cache
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\obj\Debug\netcoreapp2.0\dummyAPI.AssemblyInfo.cs
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\obj\Debug\netcoreapp2.0\dummyAPI.dll
+C:\Users\ruben.bustos\Documents\Visual Studio 2017\Projects\dummyAPI\dummyAPI\dummyAPI\obj\Debug\netcoreapp2.0\dummyAPI.pdb
