@@ -1,13 +1,16 @@
-﻿using System;
+﻿using dummyAPI.Application;
+using dummyAPI.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace dummyAPI.Repository
 {
     public interface IRepository<T>
     {
-        int Add(T item);
+        OperationResult Add(T item);
+        List<DummyModel> GetAll();
+        DummyModel Get(int id);
+        OperationResult Delete(int id);
+        OperationResult Update(int id, T item);
 
     }
 }

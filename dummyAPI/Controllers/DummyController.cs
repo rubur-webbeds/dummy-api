@@ -1,6 +1,7 @@
 ﻿using dummyAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 using dummyAPI.Repository;
+using dummyAPI.Application;
 
 namespace dummyAPI.Controllers
 {
@@ -10,42 +11,89 @@ namespace dummyAPI.Controllers
 
         private DummyRepository _repo = new DummyRepository();
 
-        // GET api/values
+        // GET api/dummy
         [HttpGet]
         public IActionResult Get()
         {
-            var obj = new DummyModel();
-            obj.id = 254;
-            obj.Name = "dummy";
-            
-            return Ok(obj);
+            return Ok(_repo.GetAll()); 
         }
 
-        // GET api/values/5
+        // GET api/dummy/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var result = _repo.Get(id);
+            if(result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
         }
 
-        // POST api/values
+        // POST api/dummy
         [HttpPost]
         public IActionResult Post([FromBody]DummyModel item)
         {
-            _repo.Add(item);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
+            var result = _repo.Add(item);           
+            if(result is AlreadyExistsError err)
+            {                                
+                return Forbid(err.Message);
+            }
+            return StatusCode(201);
         }
 
-        // PUT api/values/5
+        // PUT api/dummy/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]DummyModel item)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var result = _repo.Update(id, item);
+
+            if (result is OperationResultOk)
+            {
+                return Ok();
+            }
+            else if (result is BlockedError err)
+            {
+                return Forbid(err.Message);
+            }
+            else if (result is NotFoundError error)
+            {
+                return NotFound(error.Message);
+            }
+
+            return StatusCode(500);
         }
 
-        // DELETE api/values/5
+        // DELETE api/dummy/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var result = _repo.Delete(id);
+            
+            if(result is OperationResultOk)
+            {
+                return NoContent();
+            }
+            else if(result is BlockedError err)
+            {
+                return Forbid(err.Message);
+            }
+            else if(result is NotFoundError error)
+            {
+                return NotFound(error.Message);
+            }
+
+            return StatusCode(500);
         }
     }
 }
